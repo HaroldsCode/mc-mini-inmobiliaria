@@ -1,0 +1,31 @@
+server:
+  port: 3333
+  
+spring:
+  application:
+    name: inmueble-service
+    
+  datasource:
+      url: jdbc:postgresql://localhost:5432/db_inmueble?currentSchema=sc_inmueble&ssl=false
+      username: admin
+      password: Postgres14.4
+      driver-class-name: org.postgresql.Driver
+      
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      
+eureka:
+  client:
+    enabled: true
+  service-url:
+    defaultZone: http://localhost:8761/eureka/
+
+service:
+  security:
+    secure-key-username: ego
+    secure-key-password: ego
+    secure-key-username-2: ego2
+    secure-key-password-2: ego2

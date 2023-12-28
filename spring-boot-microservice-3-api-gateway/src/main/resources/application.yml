@@ -1,0 +1,34 @@
+server:
+  port: 5555
+
+spring:
+  application:
+    name: api-gateway
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_gateway?useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false
+    username: admin
+    password: Admin1234$
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+app:
+  jwt:
+    secret: MyRandomSecretKey||MyRandomSecretKey**MyRandomSecretKey||MyRandomSecretKey**
+    expiration-in-ms: 86400000
+
+eureka:
+  client:
+    enabled: true
+  service-url:
+    defaultZone: http://localhost:8761/eureka/
+
+service:
+  security:
+    secure-key-username: ego
+    secure-key-password: ego
